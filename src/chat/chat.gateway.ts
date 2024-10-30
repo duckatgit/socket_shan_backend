@@ -23,8 +23,8 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
   sendRandomIntegers(client: Socket) {
     setInterval(() => {
-      const randomIntegers = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 100));
-      client.emit('randomIntegers', randomIntegers);
-    }, 1000);
+      const randomInteger = Math.floor(Math.random() * 101);
+      client.emit('randomInteger', randomInteger);
+    }, 0.5);
   }
 }
